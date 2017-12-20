@@ -16,6 +16,13 @@
         opacity: 0.8;
 
       }
+
+      .view-inner{
+            padding-top: 100px;
+      }
+
+
+
       body {
         background: white-smoke;
         color: #fff;
@@ -48,7 +55,7 @@
               <a href="{% url 'contacts' %}" class=" nav-link">Contact List</a>
             </li>
             <li class="nav-item">
-              <a href= "{% url 'add' %} " class=" nav-link">Add Contact</a>
+              <a href= "{% url 'contact_create' %} " class=" nav-link">Add Contact</a>
             </li>
             <li class="nav-item">
               <a href="" class=" nav-link">Sign In</a>
@@ -58,8 +65,12 @@
       </div>
     </nav>
 
+<div class="view-inner">
+  
+  {% block content %} <!-- default content text (typically empty) --> {% endblock %}
 
-    {% block content %} <!-- default content text (typically empty) --> {% endblock %}
+</div>
+
 
     <!-- Pagination  -->
 {% block pagination %}
