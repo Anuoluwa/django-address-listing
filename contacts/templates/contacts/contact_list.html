@@ -1,0 +1,19 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <h1>Contact List</h1>
+
+    {% if contact_list %}
+    <ul>
+
+      {% for contact in contact_list %}
+      <li>
+        <a href="{{ contacts.get_absolute_url }}"><h2>{{ contact.first_name }}, {{ contact.last_name }}  ({{contact.email}}) </h2>
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>There are no contacts in the address listing.</p>
+    {% endif %}
+{% endblock %}
