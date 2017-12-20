@@ -6,6 +6,7 @@ from .models import Contact
 
 class ContactListView(generic.ListView):
     model = Contact
+    paginate_by = 20
 
 class ContactDetailView(generic.DetailView):
     model = Contact

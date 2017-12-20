@@ -8,7 +8,9 @@
 
       {% for contact in contact_list %}
       <li>
-        <a href="{{ contacts.get_absolute_url }}"><h2>{{ contact.first_name }}, {{ contact.last_name }}  ({{contact.email}}) </h2>
+        <a href="{{ contacts.get_absolute_url }}">
+        <h2>{{ contact.first_name }}  {{ contact.last_name }},   {{contact.email}}</h2>
+        </a>
       </li>
       {% endfor %}
 
