@@ -4,11 +4,11 @@ from django.http import HttpResponse
 # Create your views here.
 
 def index(request):
-    return HttpResponse('homepage nav')
+    return render(request,'index.html')
 
 
 def list(request):
-    return HttpResponse('listing')
+    return render(request,'list.html')
 
 def add(request):
-    return HttpResponse('add contacts')
+    return render(request,'add.html')
