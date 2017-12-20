@@ -8,7 +8,7 @@ def index(request):
 
 
 def list(request):
-    return HttpResponse('listing')
+    return render(request,'list.html')
 
 def add(request):
-    return HttpResponse('add contacts')
+    return render(request,'add.html')
