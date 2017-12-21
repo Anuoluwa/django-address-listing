@@ -35,3 +35,5 @@ class ContactDelete(DeleteView):
         a URL to a class-based view attribute.
     """
     success_url = reverse_lazy('contacts')
+def list(request):
+    return render(request, 'contacts/contaact_list.html', {'list': Contact.objects.all()})

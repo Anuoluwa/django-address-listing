@@ -1,109 +1,58 @@
-<<!DOCTYPE html>
-  <html lang="en">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Address Listing App</title>
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Address Listing</title>
+  {# Load the tag library #}
+  {% load bootstrap3 %}
+
+  {# Load CSS and JavaScript #}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+
+  {# Display django.contrib.messages as Bootstrap alerts #}
+  {% bootstrap_messages %}
+
+</head>
+<body>
+  <nav class="navbar navbar-default">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Address Listings</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="{% url 'contacts' %}">Contact List</a></li>
+        <li><a href="{% url 'contact_create' %}">Add Contact</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  <div class="container">
+    <!-- <div class="jumbotron">
+    <h1>Adress Listing Django app</h1>
+    <p></p>
+    <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+    </div> -->
+    <div>
+        {% block content %} <!-- default content text (typically empty) --> {% endblock %}
+    </div>
 
 
-  <style>
-      .navbar {
-        border-bottom: #008ed6 3px solid;
-        opacity: 0.8;
-
-      }
-
-      .view-inner{
-            padding-top: 100px;
-      }
+  </div>
 
 
 
-      body {
-        background: white-smoke;
-        color: #fff;
-
-      }
-
-      .navbar {
-        border-bottom: #008ed6 3px solid;
-        opacity: 0.8;
-
-      }
-
-      footer {
-        margin-top: 600px;
-      }
-    </style>
-  </head>
-
-  <body>
-    <!-- Navbar  -->
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+    <footer class="footer" style=" margin-top: 600px;">
       <div class="container">
-        <a href=="{% url 'index' %}" class="navabr-brand">AddressListing</a>
-        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a href="{% url 'contacts' %}" class=" nav-link">Contact List</a>
-            </li>
-            <li class="nav-item">
-              <a href= "{% url 'contact_create' %} " class=" nav-link">Add Contact</a>
-            </li>
-            <li class="nav-item">
-              <a href="" class=" nav-link">Sign In</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-<div class="view-inner">
-  
-  {% block content %} <!-- default content text (typically empty) --> {% endblock %}
-
-</div>
-
-
-    <!-- Pagination  -->
-{% block pagination %}
-  {% if is_paginated %}
-      <div class="pagination">
-          <span class="page-links">
-              {% if page_obj.has_previous %}
-                  <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">previous</a>
-              {% endif %}
-              <span class="page-current">
-                  Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
-              </span>
-              {% if page_obj.has_next %}
-                  <a href="{{ request.path }}?page={{ page_obj.next_page_number }}">next</a>
-              {% endif %}
-          </span>
-      </div>
-  {% endif %}
-{% endblock %}
-
-
-
-
-
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-
-  </body>
-
-
-  <footer class="bg-dark">
-    <div class="container">
       <div class="row">
         <div class="col text-center">
           <div class="py-4">
@@ -112,7 +61,8 @@
           </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
 
-  </html>
+
+</body>
+</html>
