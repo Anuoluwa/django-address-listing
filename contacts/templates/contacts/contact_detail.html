@@ -1,0 +1,29 @@
+
+{% load bootstrap3 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+
+{% block content %}
+
+<div class="container">
+  <a href="{% url 'contact-detail' contact.pk %}">
+    <h3><strong>First Name:</strong> {{ contact.first_name }}</h3>
+    <h3><strong>Last Name:</strong> {{ contact.last_name }}</h3>
+    <h3><strong>Email Address:</strong> {{ contact.email }}</h3>
+  </a>
+    {% buttons %}
+      <button type="submit" class="btn btn-success">
+        {% bootstrap_icon "star" %} Submit
+      </button>
+      <button type="submit" class="btn btn-primary">
+        {% bootstrap_icon "star" %} Cancel
+      </button>
+    {% endbuttons %}
+</div>
+
+{% endblock %}
