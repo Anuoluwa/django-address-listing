@@ -1,25 +1,16 @@
+{% extends "base_generic.html" %}
 
-
-{% load bootstrap3 %}
-
-{# Load CSS and JavaScript #}
-{% bootstrap_css %}
-{% bootstrap_javascript %}
-
-{# Display django.contrib.messages as Bootstrap alerts #}
-{% bootstrap_messages %}
 
 {% block content %}
 <div class="container">
-  <h1>Contact List</h1>
+  <h1>Contact List</h1><br>
   {% if contact_list %}
   <ul>
 
     {% for contact in contact_list %}
     <li>
-      <a href="{{ contacts.get_absolute_url }}">
-      <h2>{{ contact.first_name }}  {{ contact.last_name }},   {{contact.email}}</h2>
-      </a>
+      <a href="/contacts/list/{{ contact.id }}">
+      <p><h2><span>First Name: </span>{{ contact.first_name }}</h2> <h2> <span>Last Name: </span> {{ contact.last_name }}</h2> <h2></a><span>Email: </span>{{contact.email}}</h2></p></br>
     </li>
     {% endfor %}
 
