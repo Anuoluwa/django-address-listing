@@ -13,7 +13,7 @@ class ContactListViewTest(TestCase):
 
     @classmethod
     def setUpTestData(cls):
-        number_of_contacts = 23
+        number_of_contacts = 13
         for contact_num in range(number_of_contacts):
             Contact.objects.create(first_name='Anuoluwapo %s' % contact_num, last_name = 'Surname %s' % contact_num, )
 
@@ -31,12 +31,12 @@ class ContactListViewTest(TestCase):
 
         self.assertTemplateUsed(resp, 'contacts/contact_list.html')
 
-    def test_pagination_is_twenty(self):
+    def test_pagination_is_ten(self):
         resp = self.client.get(reverse('contacts'))
         self.assertEqual(resp.status_code, 200)
         self.assertTrue('is_paginated' in resp.context)
         self.assertTrue(resp.context['is_paginated'] == True)
-        self.assertTrue( len(resp.context['contact_list']) == 20)
+        self.assertTrue( len(resp.context['contact_list']) == 10)
 
     def test_lists_all_contacts(self):
         #Get second page and confirm it has (exactly) remaining 3 items

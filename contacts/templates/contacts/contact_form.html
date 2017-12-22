@@ -3,6 +3,7 @@
 
 {% load bootstrap3 %}
 
+
 {% block content %}
 
 <div class="container">
@@ -11,14 +12,13 @@
     <div class="class col-md-6">
       <h2>Add Contact</h2> <h4> <span><a href="/contacts/list">Home</a></span></h4>
       <br>
-      <form action="/url/to/submit/" method="post" class="form">
+      <form action="" method="post" class="form">
         {% csrf_token %}
         {% bootstrap_form form %}
         {% buttons %}
           <button type="submit" class="btn btn-success">
             {% bootstrap_icon "star" %} Submit
           </button>
-
         {% endbuttons %}
 
       </form>

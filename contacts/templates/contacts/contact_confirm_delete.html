@@ -1,3 +1,4 @@
+{% extends "base_generic.html" %}
 
 
 {% block content %}
@@ -9,6 +10,7 @@
 <form action="" method="POST">
   {% csrf_token %}
   <input type="submit" action="" value="Yes, delete." />
+  <a href="/contacts/list"><input type="submit" action="" value="No, back." /></a>
 </form>
 
 {% endblock %}
