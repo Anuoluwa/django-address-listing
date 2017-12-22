@@ -44,5 +44,3 @@ class ContactModelTest(TestCase):
         contact=Contact.objects.get(id=1)
         max_length = contact._meta.get_field('email').max_length
         self.assertEquals(max_length,100)
-
-    
