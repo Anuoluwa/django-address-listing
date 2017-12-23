@@ -14,6 +14,9 @@ The challenge is a Django based application, so please make sure you use all of 
 
 Make reasonable assumptions, state your assumptions, and proceed. Once you have completed the challenge, let us know and share your thoughts on the problems/solutions.
 
+#### Git Workflow
+**The master branch is intact. I used another branch 'Develop'. And for every feature, I new branch is created locally and merged upstream with develop branch with pull requests.**
+
 ### Django Infasctructure Used
   #### ModelForm, template inheritance, ORM, migrations were all used
 
