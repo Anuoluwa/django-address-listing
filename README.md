@@ -25,8 +25,8 @@ Unit testing is one of the assumptions that I made for this app, so I implemente
 
 ### Functionalities
 **This app essentially focus on the backend, using Django and Python**
-*A user should be able to create Listing*
-*A user should be able to can add Listings*
-*A user should be able to view a single list on a page*
-*A user should be able to update lists*
-*A user should be able to delete a specific list*
+* A user should be able to create Listing
+* A user should be able to can add Listings
+* A user should be able to view a single list on a page
+* A user should be able to update lists
+* A user should be able to delete a specific list
