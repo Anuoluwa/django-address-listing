@@ -1,15 +1,9 @@
+{% extends "base_generic.html" %}
 
 {% load bootstrap3 %}
 
-{# Load CSS and JavaScript #}
-{% bootstrap_css %}
-{% bootstrap_javascript %}
-
-{# Display django.contrib.messages as Bootstrap alerts #}
-{% bootstrap_messages %}
-
 {% block content %}
-
+<h2>Contact Detail Page</h2>
 <div class="container">
   <a href="{% url 'contact-detail' contact.pk %}">
     <h3><strong>First Name:</strong> {{ contact.first_name }}</h3>
@@ -17,12 +11,18 @@
     <h3><strong>Email Address:</strong> {{ contact.email }}</h3>
   </a>
     {% buttons %}
+    <a href="/contacts/{{contact.id}}/update">
       <button type="submit" class="btn btn-success">
-        {% bootstrap_icon "star" %} Submit
+        {% bootstrap_icon "star" %} Update
       </button>
-      <button type="submit" class="btn btn-primary">
-        {% bootstrap_icon "star" %} Cancel
-      </button>
+    </a>
+
+      <a href="/contacts/{{contact.id}}/delete">
+        <button type="submit" class="btn btn-danger" >
+          {% bootstrap_icon "star" %} Delete
+        </button>
+      </a>
+
     {% endbuttons %}
 </div>
 

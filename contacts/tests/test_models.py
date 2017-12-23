@@ -7,7 +7,7 @@ class ContactModelTest(TestCase):
 
     @classmethod
     def setUpTestData(cls):
-        #Set up non-modified objects used by all test methods
+
         Contact.objects.create(first_name='Anu', last_name='Apiti')
 
     def test_first_name_label(self):
